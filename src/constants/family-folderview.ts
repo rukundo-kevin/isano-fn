@@ -857,7 +857,7 @@ export const items: ItemObject = {
     photo: "",
   },
   keza: {
-    index: "Keza",
+    index: "keza",
     children: [],
     data: "Keza",
     isFolder: false,

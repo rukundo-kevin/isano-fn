@@ -4,6 +4,7 @@ interface Modal {
   visible: boolean;
   onClose(): void;
 }
+
 const Modal = ({ children, visible, onClose }: Modal) => {
   if (!visible) return null;
 
@@ -24,4 +25,24 @@ const Modal = ({ children, visible, onClose }: Modal) => {
   );
 };
 
+export const PhotoModal = ({
+  visible,
+  onClose,
+  photo,
+}: {
+  visible: boolean;
+  onClose(): void;
+  photo: string | undefined;
+}) => {
+  return (
+    <Modal visible={visible} onClose={onClose}>
+      <img
+        id="modalImage"
+        src={photo}
+        alt="Family Member"
+        className="rounded-md w-1/2 h-5/6 mt-20  cursor-pointer"
+      ></img>
+    </Modal>
+  );
+};
 export default Modal;
