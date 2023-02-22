@@ -68,7 +68,6 @@ export const items: ItemObject = {
     index: "gafurutsi",
     isFolder: true,
     gender: "Male",
-
     children: [
       "hamurungi",
       "nyagashayija",

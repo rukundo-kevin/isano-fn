@@ -21,8 +21,7 @@ export default function renderForeignObjectNode(
           width="60"
           x="-30"
           onClick={() => {
-            nodeDatum.attributes &&
-              handleNodeClick(nodeDatum.attributes.photo.toString());
+            nodeDatum.attributes && handleNodeClick(nodeDatum);
           }}
           className="border-2 outline-red-500"
         />
@@ -36,6 +35,9 @@ export default function renderForeignObjectNode(
           height={40}
           width={50}
           x={-25}
+          onClick={() => {
+            nodeDatum.attributes && handleNodeClick(nodeDatum);
+          }}
         >
           <g>
             <g>
@@ -64,6 +66,9 @@ export default function renderForeignObjectNode(
           height={40}
           width={50}
           x={-25}
+          onClick={() => {
+            nodeDatum.attributes && handleNodeClick(nodeDatum);
+          }}
         >
           <path
             fill="#141f38"

@@ -1,6 +1,5 @@
 const orgChart = {
   name: "Rulinda",
-
   children: [
     {
       name: "Kayinamura",

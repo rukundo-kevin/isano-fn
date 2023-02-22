@@ -2,10 +2,12 @@ import { useState } from "react";
 import Tree from "react-d3-tree";
 import Modal from "../components/Modal";
 import { useCenteredTree } from "../Hooks/useCenteredTree";
-import { FamilyTreeItem, FamilyTreeNode } from "../types";
+import { Attributes, FamilyTreeItem, FamilyTreeNode } from "../types";
 import { items } from "../constants/family-folderview";
 import { createFamilyTree } from "../helpers/createFamilyTree";
 import renderForeignObjectNode from "../components/ForeignObjectNode";
+import { FaUser } from "react-icons/fa";
+import { TreeNodeDatum } from "react-d3-tree/lib/types/types/common";
 
 const itemsArray: FamilyTreeItem[] = Object.values(items).map((item) => ({
   data: item.data,
@@ -20,43 +22,64 @@ const itemsArray: FamilyTreeItem[] = Object.values(items).map((item) => ({
   },
 }));
 
-const familyTree: FamilyTreeNode = createFamilyTree(itemsArray, "root");
-
-const FamilyMemberModal = ({
-  photo,
-  showModal,
-  setShowModal,
-}: {
-  photo?: string;
+interface ModalTreeNode {
+  member: TreeNodeDatum;
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
-}) => {
-  return (
-    <Modal visible={showModal} onClose={() => setShowModal(false)}>
-      <div className="flex justify-center items-center bg-gray-200 w-3/5 h-3/4 mt-28">
-        <img
-          id="modalImage"
-          src={photo}
-          alt="Family Member"
-          className="w-70 h-60"
-        ></img>
-      </div>
-    </Modal>
-  );
+}
+
+const familyTree: FamilyTreeNode = createFamilyTree(itemsArray, "root");
+
+const FamilyMemberModal = (memberData: ModalTreeNode) => {
+  const memberAttributes = memberData.member.attributes as Attributes;
+  const { photo, gender, born, dead } = memberAttributes;
+  const { showModal, setShowModal } = memberData;
+
+  if (photo) {
+    return (
+      <Modal visible={showModal} onClose={() => setShowModal(false)}>
+        <div className="flex justify-center items-center bg-gray-200 w-3/5 h-3/4 mt-28">
+          <img
+            id="modalImage"
+            src={photo}
+            alt="Family Member"
+            className="w-70 h-60"
+          ></img>
+        </div>
+      </Modal>
+    );
+  } else {
+    return (
+      <Modal visible={showModal} onClose={() => setShowModal(false)}>
+        <div className="flex justify-center items-center bg-gray-200 w-3/5 h-3/4 mt-28">
+          <FaUser className="w-1/2 h-1/3" />
+        </div>
+      </Modal>
+    );
+  }
 };
 
 export default function FamilyTree() {
   const [showModal, setShowModal] = useState(false);
-  const [photo, setPhoto] = useState("");
+
+  const [memberData, setMemberData] = useState<TreeNodeDatum>({
+    name: "",
+    attributes: {},
+    children: [],
+    __rd3t: {
+      depth: 0,
+      id: "root",
+      collapsed: false,
+    },
+  });
 
   const [dimensions, translate, containerRef] = useCenteredTree();
 
   const nodeSize = { x: 140, y: 150 };
 
   const foreignObjectProps = { width: nodeSize.x, height: nodeSize.y, x: 20 };
-
-  const handleNodeClick = (photo: string) => {
-    setPhoto(photo);
+  const handleNodeClick = (memberData: TreeNodeDatum) => {
+    setMemberData(memberData);
     setShowModal(true);
   };
 
@@ -82,8 +105,8 @@ export default function FamilyTree() {
         }
       />
       <FamilyMemberModal
-        photo={photo}
-        showModal={showModal}
+        member={memberData}
+        showModal
         setShowModal={setShowModal}
       />
     </div>
