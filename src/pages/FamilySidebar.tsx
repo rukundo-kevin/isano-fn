@@ -8,7 +8,7 @@ import {
 import { items } from "../constants/family-folderview";
 import { HiBars3CenterLeft, HiXMark } from "react-icons/hi2";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { FamilyMember, RenderItem } from "../types";
+import { RenderItem } from "../types";
 import Profile from "./Profile";
 
 const renderItem = ({
@@ -40,13 +40,6 @@ const renderItem = ({
     {children}
   </li>
 );
-interface Member {
-  [key: string]: FamilyMember;
-}
-
-const familyItems = items as unknown as Member;
-
-let familyMember: FamilyMember;
 
 function FamilySidebar() {
   let [sidebarOpen, setSidebarOpen] = useState(false);

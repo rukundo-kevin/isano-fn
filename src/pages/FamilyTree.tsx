@@ -51,7 +51,7 @@ export default function FamilyTree() {
 
   const [dimensions, translate, containerRef] = useCenteredTree();
 
-  const nodeSize = { x: 150, y: 150 };
+  const nodeSize = { x: 140, y: 150 };
 
   const foreignObjectProps = { width: nodeSize.x, height: nodeSize.y, x: 20 };
 
@@ -72,7 +72,7 @@ export default function FamilyTree() {
         zoom={0.7}
         nodeSize={nodeSize}
         initialDepth={1}
-        separation={{ siblings: 1.5, nonSiblings: 2 }}
+        separation={{ siblings: 1.3, nonSiblings: 2 }}
         renderCustomNodeElement={(rd3tProps) =>
           renderForeignObjectNode(
             rd3tProps,
