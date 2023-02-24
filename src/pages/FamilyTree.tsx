@@ -51,7 +51,7 @@ export default function FamilyTree() {
 
   const [dimensions, translate, containerRef] = useCenteredTree();
 
-  const nodeSize = { x: 120, y: 100 };
+  const nodeSize = { x: 150, y: 150 };
 
   const foreignObjectProps = { width: nodeSize.x, height: nodeSize.y, x: 20 };
 
