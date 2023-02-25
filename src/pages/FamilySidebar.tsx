@@ -57,9 +57,7 @@ function FamilySidebar() {
     data: newName,
   }));
 
-  const handleSelect = (memberIndex: TreeItemIndex[]) => {
-    console.log(familyItems[memberIndex[0]]);
-  };
+  const handleSelect = (memberIndex: TreeItemIndex[]) => {};
 
   return (
     <div className="flex overflow-hidden  ">

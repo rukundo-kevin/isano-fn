@@ -7,6 +7,7 @@ import {
   FaGenderless,
   FaUser,
   FaExpand,
+  FaCompress,
 } from "react-icons/fa";
 import { items } from "../constants/family-folderview";
 import { FamilyMember } from "../types";
@@ -89,10 +90,18 @@ const Profile = () => {
             : "md:h-[75vh] md:w-3/4 m-2 md:mt-28"
         }  border   md:mb-10 shadow-md  rounded-md  full-screen-div`}
       >
-        <FaExpand
-          className={`m-2 w-5 h-5 mr-auto hidden md:block `}
-          onClick={handleFullScreenClick}
-        />
+        {!isFullScreen ? (
+          <FaExpand
+            className={`m-2 w-5 h-5 mr-auto hidden md:block `}
+            onClick={handleFullScreenClick}
+          />
+        ) : (
+          <FaCompress
+            className={`m-2 w-5 h-5 mr-auto hidden md:block `}
+            onClick={handleFullScreenClick}
+          />
+        )}
+
         <div id="treeWrapper" className="h-full w-full">
           <Tree
             data={family}
