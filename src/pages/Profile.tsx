@@ -8,7 +8,6 @@ import {
   FaUser,
   FaExpand,
 } from "react-icons/fa";
-import { HiSquaresPlus } from "react-icons/hi2";
 import { items } from "../constants/family-folderview";
 import { FamilyMember } from "../types";
 import Tree from "react-d3-tree";
@@ -31,6 +30,17 @@ const Profile = () => {
   } else {
     familyMember = familyItems[id as keyof typeof familyItems];
   }
+
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const handleFullScreenClick = () => {
+    const elem = document.documentElement;
+    if (!isFullScreen) {
+      elem.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+    setIsFullScreen(!isFullScreen);
+  };
 
   return (
     <div className="flex flex-col md:flex-row w-full overflow-hidden">
@@ -72,8 +82,17 @@ const Profile = () => {
           <span className="ml-2"> {familyMember.children?.length} </span>
         </div>
       </div>
-      <div className="flex w-[90%] md:w-3/4 border m-2 md:h-[75vh] md:mb-10 shadow-md  rounded-md md:mt-28 ">
-        <FaExpand className="m-2 w-5 h-5 mr-auto" />
+      <div
+        className={`flex w-[90%] ${
+          isFullScreen
+            ? "fixed inset-0 z-50 bg-white overflow-y-auto md:w-screen h-screen mx-2 md:mt-24"
+            : "md:h-[75vh] md:w-3/4 m-2 md:mt-28"
+        }  border   md:mb-10 shadow-md  rounded-md  full-screen-div`}
+      >
+        <FaExpand
+          className={`m-2 w-5 h-5 mr-auto hidden md:block `}
+          onClick={handleFullScreenClick}
+        />
         <div id="treeWrapper" className="h-full w-full">
           <Tree
             data={family}
