@@ -11,7 +11,6 @@ import {
 
 import { HiDocumentText } from "react-icons/hi2";
 
-import resume from "../images/Resume.pdf";
 export default function Footer() {
   return (
     <footer className="h-[16vh] flex flex-col justify-start md:justify-center items-center mb-6 w-[70vw] md:w-[75vw] lg:w-full">
@@ -24,7 +23,7 @@ export default function Footer() {
         >
           <FaGithub className="ml-20 md:ml-0 text-gray-900 dark:text-white text-2xl md:text-4xl cursor-pointer hover:bg-white dark:hover:text-black hover:text-black hover:rounded-full" />
         </a>
-        <a href={resume} target="_blank" rel="noreferrer">
+        <a href="#" target="_blank" rel="noreferrer">
           <HiDocumentText className="text-gray-900 dark:text-white text-2xl md:text-4xl ml-6 cursor-pointer" />
         </a>
         <a

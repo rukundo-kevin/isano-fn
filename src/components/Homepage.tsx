@@ -1,21 +1,16 @@
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import rukundoImage from "../images/rukundo kevin.jpg";
 import Footer from "./Footer";
-import Interest from "./Interest";
-import TechStack from "./TechStack";
-
-import resume from "../images/Resume.pdf";
 
 const Homepage = () => {
   return (
     <section className="flex m-2 mt-12 md:mt-6  dark:text-white flex-col justify-center items-center min-h-[90vh] overscroll-none bg-[#eee] dark:bg-slate-900">
       <div className="grayscale hover:grayscale-0">
-        <img
+        {/* <img
           src={rukundoImage}
           className="w-40 shadow-md  rounded-full object-cover hover:cursor-pointer"
           alt="Rukundo Kevin"
-        />
+        /> */}
       </div>
 
       <div className="font-bold mt-3 dark:text-white flex flex-col items-center">
@@ -36,16 +31,8 @@ const Homepage = () => {
           </span>
         </div>
         <div className="mt-6">
-          <a
-            href={resume}
-            target="_blank"
-            download="rukundo-awesome-resume"
-            rel="noreferrer"
-            className="bg-[#1280a3] z-0  relative flex justify-center py-2 px-4  border border-transparent  font-medium rounded-md  text-white text-lg hover:bg-[#1280a3] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-secondary sm:mx-0 hover:cursor-pointer"
-          >
-            <FaExternalLinkAlt className="mt-2 mr-1 w-8" />
-            Resume
-          </a>
+          <FaExternalLinkAlt className="mt-2 mr-1 w-8" />
+          Resume
         </div>
       </div>
     </section>
@@ -56,8 +43,6 @@ const Home = () => {
   return (
     <>
       <Homepage />
-      <TechStack />
-      <Interest />
       <Footer />
     </>
   );

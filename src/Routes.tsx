@@ -1,9 +1,7 @@
 /* eslint-disable */
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import About from "./components/About";
 import Error from "./components/Error";
-import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Home from "./components/Homepage";
 
@@ -17,8 +15,6 @@ function MainRoutes() {
       <Suspense fallback={<Skeleton />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Suspense>
