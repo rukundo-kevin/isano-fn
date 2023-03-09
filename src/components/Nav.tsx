@@ -8,7 +8,6 @@ const Nav = () => {
   let Links = [
     { name: "About", link: "/about" },
     { name: "Experience", link: "/experience" },
-    // { name: "Contact", link: "/contact" },
   ];
   let [open, setOpen] = useState(false);
   const [colorTheme, setTheme] = useDarkMode();

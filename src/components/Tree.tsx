@@ -2,7 +2,7 @@ import React from "react";
 import Tree from "react-d3-tree";
 import family from "../constants/family-data";
 
-export default function OrgChartTree() {
+export default function FamilyTree() {
   return (
     <div id="treeWrapper" className="h-screen w-screen">
       <Tree
