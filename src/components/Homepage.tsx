@@ -1,6 +1,7 @@
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Footer from "./Footer";
+import OrgChartTree from "./Tree";
 
 const Homepage = () => {
   return (
@@ -42,8 +43,8 @@ const Homepage = () => {
 const Home = () => {
   return (
     <>
-      <Homepage />
-      <Footer />
+      <OrgChartTree />
+      {/* <Footer /> */}
     </>
   );
 };
