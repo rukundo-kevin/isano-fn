@@ -11,6 +11,7 @@ const Nav = () => {
   let Links = [
     { name: "About", link: "/about" },
     { name: "Login", link: "/login" },
+    { name: "View more family trees", link: "/more-family-trees" },
   ];
   let [open, setOpen] = useState(false);
   const [colorTheme, setTheme] = useDarkMode();
