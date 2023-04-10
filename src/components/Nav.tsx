@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import { HiMoon, HiSun } from "react-icons/hi2";
+import { HiMoon, HiSun, HiArrowRight } from "react-icons/hi2";
 import useDarkMode from "../Hooks/useDarkMode";
+
+import dropletImg from "../images/droplet.png";
+
 const Nav = () => {
   let Links = [
     { name: "About", link: "/about" },
-    { name: "Experience", link: "/experience" },
+    { name: "Login", link: "/login" },
   ];
   let [open, setOpen] = useState(false);
   const [colorTheme, setTheme] = useDarkMode();
@@ -22,14 +25,12 @@ const Nav = () => {
       <div className="md:flex items-center justify-center z-50 bg-[#eee] dark:bg-slate-900 py-4 md:px-10 px-7 shadow-lg">
         <div
           className="font-bold text-xl cursor-pointer flex items-center font-[Poppins] text-gray-900 md:text-white
-      dark:text-white p-2 md:dark:border  dark:bg-slate-900 md:bg-[#1280a3] rounded-full md:mr-20"
+      dark:text-white p-2 md:dark:border  rounded-full md:mr-20"
         >
-          <Link
-            to="/"
-            className="border md:border-0 rounded-full md:rounded-none p-2 md:p-0 -mt-1 md:mt-0"
-          >
-            RK
+          <Link to="/">
+            <img src={dropletImg} alt="Isano Logo" className="w-5 h-7" />
           </Link>
+          <span className="text-slate-900 ml-2 mt-1 text-3xl">Isano</span>
         </div>
 
         <div
@@ -54,7 +55,7 @@ const Nav = () => {
               </Link>
             </li>
           ))}
-          <button
+          {/* <button
             className="bg-primary dark:bg-gray-700 text-white font-[Poppins] py-2 px-3 rounded md:ml-24 hover:bg-[#2193b6] hover:border-[#2193b6]
     duration-500 flex flex-row border border-white"
             value="dark"
@@ -66,7 +67,18 @@ const Nav = () => {
               <HiSun className="w-8 mt-1 mr-1 text-dark-text-fill" />
             )}
             {colorTheme === "dark" ? "Dark Mode" : "Light Mode"}
-          </button>
+          </button> */}
+
+          <Link to="/login">
+            <button
+              className="bg-primary dark:bg-gray-700 text-white font-[Poppins] py-2 px-3 rounded md:ml-24 hover:bg-[#2193b6] hover:border-[#2193b6]
+    duration-500 flex flex-row border border-white"
+              value="dark"
+            >
+              <HiArrowRight className="w-8 mt-1 mr-1" />
+              Login
+            </button>
+          </Link>
         </ul>
       </div>
     </div>

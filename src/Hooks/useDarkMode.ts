@@ -5,8 +5,8 @@ const getInitialState = () => {
     const storedPrefs = window.localStorage.getItem("color-theme");
     if (storedPrefs) return storedPrefs;
     const userMedia = window.matchMedia("(prefers-color-scheme: dark)");
-    if (userMedia.matches) return "light";
-    return "dark";
+    if (userMedia.matches) return "dark";
+    return "light";
   }
   return "light";
 };
