@@ -10,8 +10,7 @@ export default function FamilyTree() {
         pathFunc="step"
         orientation="vertical"
         translate={{ x: window.innerWidth / 2, y: 120 }}
-        zoom={0.6}
-        // separation={{ siblings: 1, nonSiblings: 1 }}
+        zoom={8}
       />
     </div>
   );
