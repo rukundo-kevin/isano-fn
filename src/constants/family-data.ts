@@ -24,54 +24,18 @@ const orgChart = {
           attributes: {
             born: "1957",
           },
-          children: [
-            {
-              name: "Mugoregore",
-              attributes: {
-                born: "1957",
-              },
-            },
-            {
-              name: "Sylia",
-            },
-            {
-              name: "Taremwa",
-            },
-          ],
         },
         {
           name: "Kagubare Alex",
           attributes: {
             born: "1964",
           },
-          children: [
-            {
-              name: "Mushabe Andrew",
-            },
-          ],
         },
         {
           name: "Kabanguka ",
           attributes: {
             born: "1967",
           },
-          children: [
-            {
-              name: "Kaliza Grolia",
-            },
-            {
-              name: "Rukundo Kevin",
-            },
-            {
-              name: "Niyonshuti Kenneth",
-            },
-            {
-              name: "Gato Elisah",
-            },
-            {
-              name: "Gakuru Elia",
-            },
-          ],
         },
 
         {
@@ -79,43 +43,12 @@ const orgChart = {
           attributes: {
             born: "1964",
           },
-          children: [
-            {
-              name: "Rutare ",
-            },
-            {
-              name: "Sam ",
-            },
-            {
-              name: "Nkotanyi",
-            },
-            {
-              name: "Umuhoza Anitha ",
-            },
-          ],
         },
         {
           name: "Karimukiza Samuel",
           attributes: {
             born: "1964",
           },
-          children: [
-            {
-              name: "Kagubare Sam",
-              attributes: {
-                born: "1998",
-              },
-            },
-            {
-              name: "Dorcas",
-            },
-            {
-              name: "Phionah",
-            },
-            {
-              name: "Keza",
-            },
-          ],
         },
         {
           name: "Murebwayire ",
@@ -128,25 +61,12 @@ const orgChart = {
           attributes: {
             born: "1964",
           },
-          children: [
-            {
-              name: "Danny",
-            },
-            {
-              name: "Deborah",
-            },
-          ],
         },
         {
           name: "Kabatesi ",
           attributes: {
             born: "1964",
           },
-          children: [
-            {
-              name: "",
-            },
-          ],
         },
       ],
     },
@@ -161,33 +81,18 @@ const orgChart = {
           attributes: {
             born: "N/A",
           },
-          children: [
-            {
-              name: "Mukimbiri",
-            },
-          ],
         },
         {
           name: "Nyagashayija",
           attributes: {
             born: "1956",
           },
-          children: [
-            {
-              name: "Mukimbiri",
-            },
-          ],
         },
         {
           name: "Edward",
           attributes: {
             born: "1956",
           },
-          children: [
-            {
-              name: "Deus",
-            },
-          ],
         },
         {
           name: "Joy",
@@ -200,44 +105,24 @@ const orgChart = {
           attributes: {
             born: "1956",
           },
-          children: [
-            {
-              name: "Mukimbiri",
-            },
-          ],
         },
         {
           name: "Maridadi",
           attributes: {
             born: "1956",
           },
-          children: [
-            {
-              name: "Mukimbiri",
-            },
-          ],
         },
         {
           name: "Scola",
           attributes: {
             born: "1956",
           },
-          children: [
-            {
-              name: "Mukimbiri",
-            },
-          ],
         },
         {
           name: "Rwizima Deus",
           attributes: {
             born: "1956",
           },
-          children: [
-            {
-              name: "Mukimbiri",
-            },
-          ],
         },
       ],
     },
@@ -266,11 +151,6 @@ const orgChart = {
           attributes: {
             born: "N/A",
           },
-          // children: [
-          //   {
-          //     name: "Worker",
-          //   },
-          // ],
         },
         {
           name: "Steven",
