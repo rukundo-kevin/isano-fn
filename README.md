@@ -1,3 +1,3 @@
 # Isano
 
-Genealogy of my family.
+Genealogy software
