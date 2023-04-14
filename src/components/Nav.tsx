@@ -23,7 +23,7 @@ const Nav = () => {
 
   return (
     <div className="dark:shadow-md shadow-xs w-full fixed top-0 left-0 z-50">
-      <div className="md:flex items-center justify-center z-50 bg-[#eee] dark:bg-slate-900 py-4 md:px-10 px-7 shadow-lg">
+      <div className="md:flex items-center justify-center z-50 bg-[#eee] dark:bg-slate-900 py-4 md:px-10 px-7 shadow-md">
         <div
           className="font-bold text-xl cursor-pointer flex items-center font-[Poppins] text-gray-900 md:text-white
       dark:text-white p-2 md:dark:border  rounded-full md:mr-20"
@@ -31,7 +31,9 @@ const Nav = () => {
           <Link to="/">
             <img src={dropletImg} alt="Isano Logo" className="w-5 h-7" />
           </Link>
-          <span className="text-slate-900 ml-2 mt-1 text-3xl">Isano</span>
+          <Link to="/">
+            <span className="text-slate-900 ml-2 mt-1 text-3xl">Isano</span>
+          </Link>
         </div>
 
         <div

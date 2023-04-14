@@ -7,6 +7,7 @@ import Home from "./components/Homepage";
 
 import Nav from "./components/Nav";
 import Skeleton from "./components/Skeleton";
+import TreeView from "./components/TreeView";
 
 function MainRoutes() {
   return (
@@ -15,6 +16,7 @@ function MainRoutes() {
       <Suspense fallback={<Skeleton />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<TreeView />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Suspense>
