@@ -9,7 +9,7 @@ import dropletImg from "../images/droplet.png";
 
 const Nav = () => {
   let Links = [
-    { name: "About", link: "/about" },
+    { name: "About", link: "/family" },
     { name: "Login", link: "/login" },
     { name: "View more family trees", link: "/more-family-trees" },
   ];

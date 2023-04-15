@@ -2,6 +2,7 @@ export const items = {
   root: {
     index: "root",
     isFolder: false,
+    dead: true,
     children: [
       "kayinamura",
       "didas",
@@ -150,13 +151,12 @@ export const items = {
   kayitesi: {
     index: "kayitesi",
     isFolder: true,
-    children: [],
+    children: ["danny", "deborah"],
     data: "Kayitesi",
   },
   kabatesi: {
     index: "kabatesi",
-
-    children: ["danny", "deborah"],
+    children: [],
     data: "Kabatesi",
   },
   // Abana ba Frere
@@ -376,8 +376,18 @@ export const items = {
     data: "Keza Iris",
   },
 
+  //Abana ba Kayitesi
+  danny: {
+    index: "danny",
+    children: [],
+    data: "Danny",
+  },
+  deborah: {
+    index: "deborah",
+    children: [],
+    data: "Deborah",
+  },
   // Abana ba Hamurungi
-
   mukimbiri: {
     index: "mukimbiri",
     children: [],

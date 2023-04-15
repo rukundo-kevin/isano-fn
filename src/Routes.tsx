@@ -16,7 +16,7 @@ function MainRoutes() {
       <Suspense fallback={<Skeleton />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<TreeView />} />
+          <Route path="/family" element={<TreeView />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Suspense>
