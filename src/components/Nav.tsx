@@ -26,7 +26,7 @@ const Nav = () => {
       <div className="md:flex items-center justify-center z-50 bg-[#eee] dark:bg-slate-900 py-4 md:px-10 px-7 shadow-md">
         <div
           className="font-bold text-xl cursor-pointer flex items-center font-[Poppins] text-gray-900 md:text-white
-      dark:text-white p-2 md:dark:border  rounded-full md:mr-20"
+      dark:text-white p-2 md:dark:border  rounded-full ml-4 md:ml-0 md:mr-20"
         >
           <Link to="/">
             <img src={dropletImg} alt="Isano Logo" className="w-5 h-7" />

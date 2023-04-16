@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --rct-color-tree-bg: transparent;
+  --rct-color-tree-bg: #f6f8fa;
   --rct-item-height: 38px;
   --rct-color-search-highlight-bg: #acccf1;
 
