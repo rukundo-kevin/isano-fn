@@ -13,8 +13,8 @@ function TreeView() {
   }));
 
   return (
-    <div className="flex">
-      <div className="mt-28 h-[80vh] w-1/4 md:w-2/12 font-bold text-3xl border-r-2">
+    <div className="flex overflow-hidden">
+      <div className="mt-28 h-[80vh] w-1/4 md:w-2/12 font-bold text-3xl border-r-2 absolute md:relative -left-2/4 md:-left-0">
         <UncontrolledTreeEnvironment
           dataProvider={dataProvider}
           getItemTitle={(item) => item.data}
