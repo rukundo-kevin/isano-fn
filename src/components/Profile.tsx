@@ -1,5 +1,6 @@
 import userImage from "../images/droplet.png";
-import { FaMale, FaUsers, FaGenderless, FaFemale } from "react-icons/fa";
+import { FaMale, FaUsers, FaGenderless } from "react-icons/fa";
+
 const Profile = () => {
   return (
     <div className="flex flex-col md:flex-row w-full overflow-hidden">
@@ -18,7 +19,7 @@ const Profile = () => {
           <span className="font-bold flex">
             <FaGenderless className="" />
             Born
-          </span>{" "}
+          </span>
           : 1959 - Present
         </div>
         <div className="m-2 flex">
