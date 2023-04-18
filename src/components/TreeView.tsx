@@ -6,8 +6,8 @@ import {
 import { items } from "../constants/family-folderview";
 import Profile from "./Profile";
 import { useState } from "react";
-import { FaTimes } from "react-icons/fa";
 import { HiBars3CenterLeft, HiXMark } from "react-icons/hi2";
+
 function TreeView() {
   let [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -15,6 +15,10 @@ function TreeView() {
     ...item,
     data: newName,
   }));
+
+  const handleSelect = (items: any) => {
+    console.log(items);
+  };
 
   return (
     <div className="flex overflow-hidden ">
@@ -30,7 +34,7 @@ function TreeView() {
         )}
       </div>
       <div
-        className={`mt-32 h-[80vh]  md:w-2/12 font-bold text-3xl border-r-2 absolute md:relative -left-2/4 md:-left-0
+        className={`mt-24 h-[80vh]  md:w-2/12 font-bold text-3xl border-r-2 absolute md:relative -left-2/4 md:-left-0
         transition-transform  duration-500 ease-in ${
           sidebarOpen
             ? "-left-0 w-4/5 shadow-md  bg-gray-200 z-10 mt-20"
@@ -44,6 +48,7 @@ function TreeView() {
           canDragAndDrop={true}
           canDropOnFolder={true}
           canReorderItems={true}
+          onSelectItems={handleSelect}
         >
           <Tree treeId="tree-2" rootItem="root" treeLabel="Tree Example" />
         </UncontrolledTreeEnvironment>

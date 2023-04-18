@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import { HiMoon, HiSun, HiArrowRight } from "react-icons/hi2";
+import { HiArrowRight } from "react-icons/hi2";
 import useDarkMode from "../Hooks/useDarkMode";
 
 import dropletImg from "../images/droplet.png";
@@ -14,12 +14,6 @@ const Nav = () => {
     { name: "View more family trees", link: "/more-family-trees" },
   ];
   let [open, setOpen] = useState(false);
-  const [colorTheme, setTheme] = useDarkMode();
-
-  const handleTheme = () => {
-    localStorage.setItem("color-theme", colorTheme);
-    setTheme(colorTheme);
-  };
 
   return (
     <div className="dark:shadow-md shadow-xs w-full fixed top-0 left-0 z-50">
@@ -58,19 +52,6 @@ const Nav = () => {
               </Link>
             </li>
           ))}
-          {/* <button
-            className="bg-primary dark:bg-gray-700 text-white font-[Poppins] py-2 px-3 rounded md:ml-24 hover:bg-[#2193b6] hover:border-[#2193b6]
-    duration-500 flex flex-row border border-white"
-            value="dark"
-            onClick={handleTheme}
-          >
-            {colorTheme === "dark" ? (
-              <HiMoon className="w-8 mt-1 mr-1" />
-            ) : (
-              <HiSun className="w-8 mt-1 mr-1 text-dark-text-fill" />
-            )}
-            {colorTheme === "dark" ? "Dark Mode" : "Light Mode"}
-          </button> */}
 
           <Link to="/login">
             <button
