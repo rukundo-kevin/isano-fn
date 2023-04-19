@@ -24,6 +24,7 @@ export const items = {
     isFolder: false,
     born: "N/A",
     dead: "N/A",
+    photo: "",
   },
   didas: {
     index: "didas",
@@ -32,6 +33,7 @@ export const items = {
     isFolder: false,
     born: "N/A",
     dead: "N/A",
+    photo: "",
   },
   rwabununga: {
     index: "rwabununga",
@@ -49,6 +51,7 @@ export const items = {
     data: "Rwabununga Charles",
     born: "Jan  1928",
     dead: "Oct 2015",
+    photo: "",
   },
   gafurutsi: {
     index: "gafurutsi",
@@ -66,6 +69,7 @@ export const items = {
     data: "Gafurutsi",
     born: "N/A",
     dead: "Feb 2020",
+    photo: "",
   },
   frere: {
     index: "frere",
@@ -74,14 +78,16 @@ export const items = {
     data: "Frere",
     born: "N/A",
     dead: "N/A",
+    photo: "",
   },
   busirinkiko: {
     index: "busirinkiko",
     isFolder: true,
-    children: ["bashayija", "steven", "vanessa", "faith", "buconco"],
+    children: ["bashayija", "steven", "vanessa", "faith", "muhindaSam"],
     data: "Busirinkiko",
     born: "N/A",
     dead: "N/A",
+    photo: "",
   },
   mugabo: {
     index: "mugabo",
@@ -90,6 +96,7 @@ export const items = {
     isFolder: false,
     born: "N/A",
     dead: "N/A",
+    photo: "",
   },
   alice: {
     index: "alice",
@@ -98,6 +105,7 @@ export const items = {
     isFolder: false,
     born: "N/A",
     dead: "N/A",
+    photo: "",
   },
   ancila: {
     index: "ancila",
@@ -106,6 +114,7 @@ export const items = {
     isFolder: false,
     born: "N/A",
     dead: "N/A",
+    photo: "",
   },
   janet: {
     index: "janet",
@@ -114,6 +123,7 @@ export const items = {
     isFolder: false,
     born: "N/A",
     dead: " Present",
+    photo: "",
   },
   // Abana ba Rwabununga
   mukankusi: {
@@ -131,6 +141,7 @@ export const items = {
     data: "Mukankusi",
     born: "N/A",
     dead: "Present",
+    photo: "",
   },
   kagubare: {
     index: "kagubare",
@@ -147,6 +158,7 @@ export const items = {
     data: "Kagubare Alex",
     born: "Jan 1962",
     dead: "Feb 14, 2023",
+    photo: "",
   },
   kabanguka: {
     index: "kabanguka",
@@ -161,6 +173,7 @@ export const items = {
     data: "Kabanguka Vicent",
     born: "N/A",
     dead: "Present",
+    photo: "",
   },
   kabalungi: {
     index: "kabalungi",
@@ -169,6 +182,7 @@ export const items = {
     data: "Kabalungi",
     born: "N/A",
     dead: "Present",
+    photo: "",
   },
   karimukiza: {
     index: "karimukiza",
@@ -177,6 +191,7 @@ export const items = {
     data: "Karimukiza Samuel",
     born: "N/A",
     dead: "Present",
+    photo: "",
   },
   murebwayire: {
     index: "murebwayire",
@@ -185,6 +200,7 @@ export const items = {
     isFolder: false,
     born: "N/A",
     dead: "Present",
+    photo: "",
   },
   kayitesi: {
     index: "kayitesi",
@@ -193,6 +209,7 @@ export const items = {
     data: "Kayitesi",
     born: "N/A",
     dead: "Present",
+    photo: "",
   },
   kabatesi: {
     index: "kabatesi",
@@ -200,6 +217,8 @@ export const items = {
     data: "Kabatesi",
     isFolder: false,
     born: "N/A",
+    dead: "Present",
+    photo: "",
   },
   // Abana ba Frere
   mukazi: {
@@ -209,6 +228,7 @@ export const items = {
     isFolder: false,
     born: "N/A",
     dead: "Present",
+    photo: "",
   },
   //   Abana ba Gafurutsi
   hamurungi: {
@@ -218,6 +238,7 @@ export const items = {
     data: "Hamurungi",
     born: "N/A",
     dead: "Present",
+    photo: "",
   },
   nyagashayija: {
     index: "nyagashayija",
@@ -225,6 +246,7 @@ export const items = {
     data: "Nyagashayija",
     born: "N/A",
     dead: "Present",
+    photo: "",
   },
   edward: {
     index: "edward",
@@ -306,13 +328,15 @@ export const items = {
     born: "N/A",
     dead: "Present",
   },
-  buconco: {
-    index: "buconco",
+  muhindaSam: {
+    index: "muhindaSam",
     children: [],
-    data: "Buconco",
+    data: "Muhinda Sam",
     isFolder: false,
     born: "N/A",
     dead: "Present",
+    photo:
+      "https://media.licdn.com/dms/image/C5603AQGQXk730H_PEQ/profile-displayphoto-shrink_800_800/0/1517419799505?e=1687392000&v=beta&t=BuH7Pi1e49Mu-sWDZJsVLqK5rqAoR0AswJq7xKWACG0",
   },
   // Abana ba Mukankusi
   mugoregore: {

@@ -21,7 +21,14 @@ interface RenderItem {
   title: ReactNode;
 }
 
-const renderItem = ({ title, arrow, depth, context, children }: RenderItem) => (
+const renderItem = ({
+  title,
+  arrow,
+  depth,
+  context,
+  children,
+  item,
+}: RenderItem) => (
   <li
     {...context.itemContainerWithChildrenProps}
     className={`flex flex-col items-start m-0  text-medium ${
@@ -36,7 +43,7 @@ const renderItem = ({ title, arrow, depth, context, children }: RenderItem) => (
       }`}
     >
       <span className={`absolute top-[6px] -ml-5`}> {arrow} </span>
-      <Link to="#" className="mr-4">
+      <Link to={`/family/${item.index}`} className="mr-4">
         {title}
       </Link>
     </span>

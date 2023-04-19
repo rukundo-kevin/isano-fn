@@ -1,5 +1,4 @@
 import { useLocation, useParams } from "react-router";
-import userImage from "../images/droplet.png";
 import { FaMale, FaUsers, FaGenderless, FaUser } from "react-icons/fa";
 import { items } from "../constants/family-folderview";
 
@@ -20,19 +19,13 @@ const Profile = () => {
   }
 
   const familyItems = items as unknown as Member;
-
+  let familyMember: Props;
   const { id } = useParams();
   if (pathname == "/family") {
     const firstElement = familyItems[Object.keys(familyItems)[1]];
-    const { data: name, photo, born, dead } = firstElement;
+    familyMember = firstElement;
   } else {
-
-    const {
-      data: name,
-      photo,
-      born,
-      dead,
-    } = familyItems[id as keyof typeof familyItems];
+    familyMember = familyItems[id as keyof typeof familyItems];
   }
 
   return (
@@ -41,18 +34,18 @@ const Profile = () => {
         className="flex flex-col justify-start items-center font-[Poppins] text-gray-900 w-[90%] md:w-1/3   p-2
 		   rounded-m h- ml-2    md:ml-4  mt-28  border shadow-md text-lg"
       >
-        {/* {photo ? (
-          <img src={photo} className="w-1/2 h-1/3" alt="User Profile" />
-          ) : (
-            <FaUser className="w-1/2 h-1/3" />
-          )} */}
-        <img
-          src="https://images.unsplash.com/photo-1612214095364-c92c983ced91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
-          className="w-1/2 h-1/3"
-          alt="User Profile"
-        />
+        {familyMember.photo ? (
+          <img
+            src={familyMember.photo}
+            className="w-1/2 h-1/3"
+            alt="User Profile"
+          />
+        ) : (
+          <FaUser className="w-1/2 h-1/3" />
+        )}
+
         <div className="m-2  mt-10 flex ">
-          {/* <span className="font-bold flex">Name</span>: {data} */}
+          <span className="font-bold flex">Name</span>: {familyMember?.data}
         </div>
         <div className="m-2 mt-4 flex ">
           <span className="font-bold flex">
@@ -69,10 +62,10 @@ const Profile = () => {
         </div>
         <div className="m-2 flex">
           <span className="font-bold flex">
-            <FaUsers className="mr-1" />
+            <FaUsers className="mr-2 mt-1 pe-1" />
             Children
           </span>
-          {/* {children?.length} */}0
+          <span className="ml-2"> {familyMember.children?.length} </span>
         </div>
       </div>
 
