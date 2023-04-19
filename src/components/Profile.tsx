@@ -1,29 +1,58 @@
+import { useLocation, useParams } from "react-router";
 import userImage from "../images/droplet.png";
 import { FaMale, FaUsers, FaGenderless, FaUser } from "react-icons/fa";
+import { items } from "../constants/family-folderview";
 
-interface Props {
-  index: string;
-  isFolder?: boolean;
-  dead?: boolean;
-  children?: never[];
-  data: string;
-  photo?: string;
-}
+const Profile = () => {
+  const { pathname } = useLocation();
 
-const Profile = ({ index, isFolder, dead, children, data, photo }: Props) => {
+  interface Props {
+    index: string;
+    isFolder?: boolean;
+    dead?: boolean;
+    children?: never[];
+    data: string;
+    born: string;
+    photo?: string;
+  }
+  interface Member {
+    [key: string]: Props;
+  }
+
+  const familyItems = items as unknown as Member;
+
+  const { id } = useParams();
+  if (pathname == "/family") {
+    const firstElement = familyItems[Object.keys(familyItems)[1]];
+    const { data: name, photo, born, dead } = firstElement;
+  } else {
+
+    const {
+      data: name,
+      photo,
+      born,
+      dead,
+    } = familyItems[id as keyof typeof familyItems];
+  }
+
   return (
     <div className="flex flex-col md:flex-row w-full overflow-hidden">
       <div
         className="flex flex-col justify-start items-center font-[Poppins] text-gray-900 w-[90%] md:w-1/3   p-2
-		   rounded-m h-3/4 ml-2    md:ml-4  mt-28  border shadow-md text-lg"
+		   rounded-m h- ml-2    md:ml-4  mt-28  border shadow-md text-lg"
       >
-        {photo ? (
+        {/* {photo ? (
           <img src={photo} className="w-1/2 h-1/3" alt="User Profile" />
-        ) : (
-          <FaUser className="w-1/2 h-1/3" />
-        )}
+          ) : (
+            <FaUser className="w-1/2 h-1/3" />
+          )} */}
+        <img
+          src="https://images.unsplash.com/photo-1612214095364-c92c983ced91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+          className="w-1/2 h-1/3"
+          alt="User Profile"
+        />
         <div className="m-2  mt-10 flex ">
-          <span className="font-bold flex">Name</span>: {data}
+          {/* <span className="font-bold flex">Name</span>: {data} */}
         </div>
         <div className="m-2 mt-4 flex ">
           <span className="font-bold flex">
@@ -43,7 +72,7 @@ const Profile = ({ index, isFolder, dead, children, data, photo }: Props) => {
             <FaUsers className="mr-1" />
             Children
           </span>
-          {children?.length}
+          {/* {children?.length} */}0
         </div>
       </div>
 

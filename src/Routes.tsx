@@ -1,13 +1,13 @@
 /* eslint-disable */
 import React, { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import Error from "./components/Error";
-import Footer from "./components/Footer";
 import Home from "./components/Homepage";
 
 import Nav from "./components/Nav";
 import Skeleton from "./components/Skeleton";
 import TreeView from "./components/TreeView";
+import Profile from "./components/Profile";
 
 function MainRoutes() {
   return (
@@ -16,7 +16,9 @@ function MainRoutes() {
       <Suspense fallback={<Skeleton />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/family" element={<TreeView />} />
+          <Route path="/family" element={<TreeView />}>
+            <Route path=":id" element={<Profile />} />
+          </Route>
           <Route path="*" element={<Error />} />
         </Routes>
       </Suspense>

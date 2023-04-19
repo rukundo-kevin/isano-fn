@@ -8,9 +8,8 @@ import {
   TreeInformation,
 } from "react-complex-tree";
 import { items } from "../constants/family-folderview";
-import Profile from "./Profile";
 import { HiBars3CenterLeft, HiXMark } from "react-icons/hi2";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 interface RenderItem {
   arrow?: ReactNode;
@@ -21,21 +20,6 @@ interface RenderItem {
   item: TreeItem;
   title: ReactNode;
 }
-
-interface Member {
-  [key: string]: {
-    index: string;
-    isFolder?: boolean;
-    dead?: boolean;
-    children?: never[];
-    data: string;
-    photo?: string;
-  };
-}
-
-const data = items as unknown as Member;
-const firstElement = data[Object.keys(data)[1]];
-console.log(firstElement);
 
 const renderItem = ({ title, arrow, depth, context, children }: RenderItem) => (
   <li
@@ -104,8 +88,7 @@ function TreeView() {
           <Tree treeId="tree-2" rootItem="root" treeLabel="Tree Example" />
         </UncontrolledTreeEnvironment>
       </div>
-
-      <Profile {...firstElement} />
+      <Outlet />
     </div>
   );
 }
