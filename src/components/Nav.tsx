@@ -10,14 +10,13 @@ import dropletImg from "../images/droplet.png";
 const Nav = () => {
   let Links = [
     { name: "About", link: "/family" },
-    { name: "Login", link: "/login" },
     { name: "View more family trees", link: "/more-family-trees" },
   ];
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="dark:shadow-md shadow-xs w-full fixed top-0 left-0 z-50">
-      <div className="md:flex items-center justify-center z-50 bg-[#eee] dark:bg-slate-900 py-4 md:px-10 px-7 shadow-md">
+    <div className="w-full fixed top-0 left-0 z-50">
+      <div className="md:flex items-center justify-center z-50 bg-[#eee] dark:bg-slate-900 py-4 md:px-10 px-7 shadow-sm border-b-2">
         <div
           className="font-bold text-xl cursor-pointer flex items-center font-[Poppins] text-gray-900 md:text-white
       dark:text-white p-2 md:dark:border  rounded-full ml-4 md:ml-0 md:mr-20"

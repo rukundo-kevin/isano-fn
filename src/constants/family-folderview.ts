@@ -2,7 +2,6 @@ export const items = {
   root: {
     index: "root",
     isFolder: false,
-    dead: true,
     children: [
       "kayinamura",
       "didas",
@@ -22,6 +21,7 @@ export const items = {
     index: "kayinamura",
     children: [],
     data: "Kayinamura",
+    isFolder: false,
   },
   didas: {
     index: "didas",

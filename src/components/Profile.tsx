@@ -1,7 +1,15 @@
 import userImage from "../images/droplet.png";
 import { FaMale, FaUsers, FaGenderless } from "react-icons/fa";
 
-const Profile = () => {
+interface Props {
+  index: string;
+  isFolder?: boolean;
+  dead?: boolean;
+  children?: never[];
+  data: string;
+}
+
+const Profile = ({ index, isFolder, dead, children, data }: Props) => {
   return (
     <div className="flex flex-col md:flex-row w-full overflow-hidden">
       <div
@@ -27,7 +35,7 @@ const Profile = () => {
             <FaUsers className="mr-1" />
             Children
           </span>
-          : 3
+          {children?.length}
         </div>
       </div>
 
