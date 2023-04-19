@@ -1,5 +1,5 @@
 import userImage from "../images/droplet.png";
-import { FaMale, FaUsers, FaGenderless } from "react-icons/fa";
+import { FaMale, FaUsers, FaGenderless, FaUser } from "react-icons/fa";
 
 interface Props {
   index: string;
@@ -7,17 +7,25 @@ interface Props {
   dead?: boolean;
   children?: never[];
   data: string;
+  photo?: string;
 }
 
-const Profile = ({ index, isFolder, dead, children, data }: Props) => {
+const Profile = ({ index, isFolder, dead, children, data, photo }: Props) => {
   return (
     <div className="flex flex-col md:flex-row w-full overflow-hidden">
       <div
-        className="flex flex-col  items-center font-[Poppins] text-gray-900 w-[90%] md:w-1/3   p-2
-		   rounded-m h-3/5 ml-2    md:ml-4  mt-28  border shadow-md text-xl"
+        className="flex flex-col justify-start items-center font-[Poppins] text-gray-900 w-[90%] md:w-1/3   p-2
+		   rounded-m h-3/4 ml-2    md:ml-4  mt-28  border shadow-md text-lg"
       >
-        <img src={userImage} className="w-1/2 h-1/3" alt="User Profile" />
-        <div className="m-2 mt-16 flex fle">
+        {photo ? (
+          <img src={photo} className="w-1/2 h-1/3" alt="User Profile" />
+        ) : (
+          <FaUser className="w-1/2 h-1/3" />
+        )}
+        <div className="m-2  mt-10 flex ">
+          <span className="font-bold flex">Name</span>: {data}
+        </div>
+        <div className="m-2 mt-4 flex ">
           <span className="font-bold flex">
             <FaMale /> Gender
           </span>

@@ -3,7 +3,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import { HiArrowRight } from "react-icons/hi2";
-import useDarkMode from "../Hooks/useDarkMode";
 
 import dropletImg from "../images/droplet.png";
 

@@ -11,7 +11,6 @@ import { items } from "../constants/family-folderview";
 import Profile from "./Profile";
 import { HiBars3CenterLeft, HiXMark } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-import { log } from "console";
 
 interface RenderItem {
   arrow?: ReactNode;
@@ -30,6 +29,7 @@ interface Member {
     dead?: boolean;
     children?: never[];
     data: string;
+    photo?: string;
   };
 }
 
@@ -73,7 +73,7 @@ function TreeView() {
   };
 
   return (
-    <div className="flex overflow-hidden h-[100vh] ">
+    <div className="flex overflow-hidden  ">
       <div
         onClick={() => setSidebarOpen(!sidebarOpen)}
         className={` left-1 z-50 top-[30px] md:hidden text-3xl absolute cursor-pointer  text-gray-600
@@ -86,7 +86,7 @@ function TreeView() {
         )}
       </div>
       <div
-        className={`mt-24 h-full md:w-1/5 font-normal  border-r-2 absolute md:relative -left-2/4 md:-left-0
+        className={`mt-24 min-h-full md:w-1/5 font-normal  border-r-2 absolute md:relative -left-2/4 md:-left-0
         transition-transform  duration-500 ease-in bg-[#f6f8fa] ${
           sidebarOpen ? "-left-0 w-4/5 shadow-md   z-10 mt-20" : "-left-2/4"
         }`}
@@ -104,6 +104,7 @@ function TreeView() {
           <Tree treeId="tree-2" rootItem="root" treeLabel="Tree Example" />
         </UncontrolledTreeEnvironment>
       </div>
+
       <Profile {...firstElement} />
     </div>
   );
