@@ -1,4 +1,4 @@
-import { ReactNode, MouseEventHandler } from "react";
+import { ReactNode } from "react";
 interface Modal {
   children: ReactNode;
   visible: boolean;

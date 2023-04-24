@@ -5,6 +5,7 @@ import { CustomNodeElementProps } from "react-d3-tree/lib/types/types/common";
 import dropletImg from "../images/kevin.jpg";
 import { FaAngleDoubleDown, FaAngleDoubleRight } from "react-icons/fa";
 import Modal from "./Modal";
+import { useCenteredTree } from "../Hooks/useCenteredTree";
 
 interface ForeignObject {
   width: number;
@@ -28,7 +29,13 @@ const renderForeignObjectNode = (
         onClick={handleNodeClick}
       />
       <foreignObject {...foreignObjectProps}>
-        <div className="rounded-md mt-4 border-black shadow-sm bg-gray-300">
+        <div
+          className={`rounded-md mt-4 border-black shadow-sm ${
+            nodeDatum.__rd3t.collapsed
+              ? "bg-gray-300 "
+              : "bg-primary text-white"
+          } `}
+        >
           <h3 style={{ textAlign: "center" }}>{nodeDatum.name}</h3>
           {nodeDatum.children && (
             <button
@@ -50,6 +57,7 @@ const renderForeignObjectNode = (
 
 export default function FamilyTree() {
   const [showModal, setShowModal] = useState(false);
+  const [dimensions, translate, containerRef] = useCenteredTree();
 
   const nodeSize = { x: 120, y: 100 };
 
@@ -59,14 +67,18 @@ export default function FamilyTree() {
   };
 
   return (
-    <div id="treeWrapper" className="h-screen w-screen">
+    <div id="treeWrapper" className="h-screen w-screen" ref={containerRef}>
       <Tree
         data={family}
         pathFunc="step"
         orientation="vertical"
-        translate={{ x: window.innerWidth / 2, y: 120 }}
-        zoom={8}
+        translate={translate}
+        dimensions={dimensions}
+        centeringTransitionDuration={1000}
+        zoom={0.7}
+        nodeSize={nodeSize}
         initialDepth={1}
+        separation={{ siblings: 1.4, nonSiblings: 2 }}
         renderCustomNodeElement={(rd3tProps) =>
           renderForeignObjectNode(
             rd3tProps,
