@@ -1,13 +1,18 @@
+import { useState } from "react";
 import { useLocation, useParams } from "react-router";
 import { FaMale, FaUsers, FaGenderless, FaUser } from "react-icons/fa";
 import { HiSquaresPlus } from "react-icons/hi2";
 import { items } from "../constants/family-folderview";
 import { FamilyMember } from "../types";
 import Tree from "react-d3-tree";
+
 import family from "../constants/family-data";
+import Modal from "./Modal";
+import dropletImg from "../images/kevin.jpg";
 
 const Profile = () => {
   const { pathname } = useLocation();
+  const [showModal, setShowModal] = useState(false);
 
   interface Member {
     [key: string]: FamilyMember;
@@ -38,7 +43,14 @@ const Profile = () => {
         ) : (
           <FaUser className="w-1/2 h-1/3" />
         )}
-
+        <button className="btn" onClick={() => setShowModal(true)}>
+          Open Modal
+        </button>
+        <Modal visible={showModal} onClose={() => setShowModal(false)}>
+          <div className="flex justify-center items-center">
+            <img src={dropletImg} className="w-70 h-60"></img>
+          </div>
+        </Modal>
         <div className="m-2  mt-10 flex ">
           <span className="font-bold flex">Name</span>: {familyMember?.data}
         </div>
