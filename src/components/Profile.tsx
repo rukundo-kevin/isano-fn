@@ -27,7 +27,7 @@ const Profile = () => {
     <div className="flex flex-col md:flex-row w-full overflow-hidden">
       <div
         className="flex flex-col justify-start items-center font-[Poppins] text-gray-900 w-[90%] md:w-1/3   p-2
-		   rounded-m h- ml-2 md:ml-4  mt-28  border shadow-md text-lg"
+		   rounded-m min-h-[300px] max-h-[350px] ml-2 md:ml-4  mt-28  border shadow-md text-lg"
       >
         {familyMember.photo ? (
           <img
@@ -63,7 +63,7 @@ const Profile = () => {
           <span className="ml-2"> {familyMember.children?.length} </span>
         </div>
       </div>
-      <div className="flex w-[90%] md:w-3/4 border m-2 h-5/6 shadow-md  rounded-md md:mt-28 ">
+      <div className="flex w-[90%] md:w-3/4 border m-2 md:h-[75vh] md:mb-10 shadow-md  rounded-md md:mt-28 ">
         <HiSquaresPlus className="w-5 h-5" />
         <div id="treeWrapper" className="h-full w-full">
           <Tree
