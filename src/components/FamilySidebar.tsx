@@ -1,25 +1,15 @@
-import { useState, ReactNode } from "react";
+import { useState } from "react";
 import {
   UncontrolledTreeEnvironment,
   Tree,
   StaticTreeDataProvider,
-  TreeItemRenderContext,
-  TreeItem,
-  TreeInformation,
+  TreeItemIndex,
 } from "react-complex-tree";
 import { items } from "../constants/family-folderview";
 import { HiBars3CenterLeft, HiXMark } from "react-icons/hi2";
-import { Link, Outlet } from "react-router-dom";
-
-interface RenderItem {
-  arrow?: ReactNode;
-  children?: ReactNode;
-  context: TreeItemRenderContext;
-  depth: number;
-  info: TreeInformation;
-  item: TreeItem;
-  title: ReactNode;
-}
+import { Link, Outlet, useLocation } from "react-router-dom";
+import { FamilyMember, RenderItem } from "../types";
+import Profile from "./Profile";
 
 const renderItem = ({
   title,
@@ -50,17 +40,25 @@ const renderItem = ({
     {children}
   </li>
 );
+interface Member {
+  [key: string]: FamilyMember;
+}
 
-function TreeView() {
+const familyItems = items as unknown as Member;
+
+let familyMember: FamilyMember;
+
+function FamilySidebar() {
   let [sidebarOpen, setSidebarOpen] = useState(false);
+  const { pathname } = useLocation();
 
   const dataProvider = new StaticTreeDataProvider(items, (item, newName) => ({
     ...item,
     data: newName,
   }));
 
-  const handleSelect = (items: any) => {
-    console.log(items);
+  const handleSelect = (memberIndex: TreeItemIndex[]) => {
+    console.log(familyItems[memberIndex[0]]);
   };
 
   return (
@@ -95,9 +93,9 @@ function TreeView() {
           <Tree treeId="tree-2" rootItem="root" treeLabel="Tree Example" />
         </UncontrolledTreeEnvironment>
       </div>
-      <Outlet />
+      {pathname === "/family" ? <Profile /> : <Outlet />}
     </div>
   );
 }
 
-export default TreeView;
+export default FamilySidebar;

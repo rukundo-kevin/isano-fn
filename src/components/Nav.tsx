@@ -7,10 +7,7 @@ import { HiArrowRight } from "react-icons/hi2";
 import dropletImg from "../images/droplet.png";
 
 const Nav = () => {
-  let Links = [
-    { name: "About", link: "/family" },
-    { name: "View more family trees", link: "/more-family-trees" },
-  ];
+  let Links = [{ name: "View Family", link: "/family" }];
   let [open, setOpen] = useState(false);
 
   return (
