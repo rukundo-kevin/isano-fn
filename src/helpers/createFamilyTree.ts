@@ -10,17 +10,15 @@ export function createFamilyTree(
   }
 
   const familyTreeNode: FamilyTreeNode = {
-    name: index == "root" ? "Rulinda" : currentItem.data,
+    name: index === "root" ? "Rulinda" : currentItem.data,
   };
-
-  if (currentItem.isFolder || index == "root") {
+  if (currentItem.attributes) {
+    familyTreeNode.attributes = currentItem.attributes;
+  }
+  if (currentItem.isFolder || index === "root") {
     familyTreeNode.children = currentItem.children.map((childIndex) =>
       createFamilyTree(items, childIndex)
     );
-  }
-
-  if (currentItem.attributes) {
-    familyTreeNode.attributes = currentItem.attributes;
   }
 
   return familyTreeNode;

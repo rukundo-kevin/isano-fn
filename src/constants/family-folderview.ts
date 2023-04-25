@@ -566,9 +566,9 @@ export const items: ItemObject = {
     data: "Rukundo Kevin",
     isFolder: false,
     gender: "Male",
-
     born: "N/A",
     dead: "Present",
+    photo: "https://avatars.githubusercontent.com/u/38954786?v=4",
   },
   niyonshuti: {
     index: "niyonshuti",

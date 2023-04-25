@@ -33,7 +33,13 @@ interface FamilyTreeNode {
   children?: FamilyTreeNode[];
   attributes?: Record<string, any>;
 }
+interface Attributes {
+  gender?: string;
+  photo?: string;
+  born?: string;
+  dead?: string;
+}
 
 interface FamilyTreeItem extends FamilyMember {
-  attributes?: Record<string, string>;
+  attributes?: Attributes;
 }
