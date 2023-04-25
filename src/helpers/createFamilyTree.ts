@@ -10,7 +10,7 @@ export function createFamilyTree(
   }
 
   const familyTreeNode: FamilyTreeNode = {
-    name: currentItem.data,
+    name: index == "root" ? "Rulinda" : currentItem.data,
   };
 
   if (currentItem.isFolder || index == "root") {

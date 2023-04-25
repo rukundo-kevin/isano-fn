@@ -1,66 +1,16 @@
 import { useState } from "react";
 import Tree from "react-d3-tree";
-import family from "../constants/family-data";
-import { CustomNodeElementProps } from "react-d3-tree/lib/types/types/common";
 import dropletImg from "../images/kevin.jpg";
-import { FaAngleDoubleDown, FaAngleDoubleRight } from "react-icons/fa";
 import Modal from "../components/Modal";
 import { useCenteredTree } from "../Hooks/useCenteredTree";
 import { FamilyTreeItem, FamilyTreeNode } from "../types";
 import { items } from "../constants/family-folderview";
 import { createFamilyTree } from "../helpers/createFamilyTree";
-
-interface ForeignObject {
-  width: number;
-  height: number;
-}
+import renderForeignObjectNode from "../components/ForeignObjectNode";
 
 const itemsArray: FamilyTreeItem[] = Object.values(items);
 
 const familyTree: FamilyTreeNode = createFamilyTree(itemsArray, "root");
-
-const renderForeignObjectNode = (
-  customNodeProps: CustomNodeElementProps,
-  foreignObjectProps: ForeignObject,
-  handleNodeClick: any
-) => {
-  const { nodeDatum, toggleNode } = customNodeProps;
-
-  return (
-    <g>
-      <image
-        href={dropletImg}
-        height="60"
-        width="60"
-        x="-30"
-        onClick={handleNodeClick}
-      />
-      <foreignObject {...foreignObjectProps}>
-        <div
-          className={`rounded-md mt-4 border-black shadow-sm ${
-            nodeDatum.__rd3t.collapsed
-              ? "bg-gray-300 "
-              : "bg-primary text-white"
-          } `}
-        >
-          <h3 style={{ textAlign: "center" }}>{nodeDatum.name}</h3>
-          {nodeDatum.children && (
-            <button
-              className="w-full flex justify-center p-1"
-              onClick={toggleNode}
-            >
-              {nodeDatum.__rd3t.collapsed ? (
-                <FaAngleDoubleRight />
-              ) : (
-                <FaAngleDoubleDown />
-              )}
-            </button>
-          )}
-        </div>
-      </foreignObject>
-    </g>
-  );
-};
 
 export default function FamilyTree() {
   const [showModal, setShowModal] = useState(false);
