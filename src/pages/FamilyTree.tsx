@@ -4,7 +4,7 @@ import family from "../constants/family-data";
 import { CustomNodeElementProps } from "react-d3-tree/lib/types/types/common";
 import dropletImg from "../images/kevin.jpg";
 import { FaAngleDoubleDown, FaAngleDoubleRight } from "react-icons/fa";
-import Modal from "./Modal";
+import Modal from "../components/Modal";
 import { useCenteredTree } from "../Hooks/useCenteredTree";
 
 interface ForeignObject {

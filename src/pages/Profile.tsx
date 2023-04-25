@@ -7,7 +7,7 @@ import { FamilyMember } from "../types";
 import Tree from "react-d3-tree";
 
 import family from "../constants/family-data";
-import Modal from "./Modal";
+import Modal from "../components/Modal";
 import dropletImg from "../images/kevin.jpg";
 
 const Profile = () => {

@@ -6,7 +6,7 @@ import Home from "./components/Homepage";
 
 import Nav from "./components/Nav";
 import Skeleton from "./components/Skeleton";
-import TreeView from "./components/FamilySidebar";
+import TreeView from "./pages/FamilySidebar";
 import Profile from "./components/Profile";
 
 function MainRoutes() {

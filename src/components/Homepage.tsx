@@ -1,6 +1,6 @@
 import React from "react";
 
-import OrgChartTree from "./Tree";
+import OrgChartTree from "../pages/FamilyTree";
 
 const Home = () => {
   return (
