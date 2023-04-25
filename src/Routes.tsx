@@ -7,7 +7,7 @@ import Home from "./components/Homepage";
 import Nav from "./components/Nav";
 import Skeleton from "./components/Skeleton";
 import TreeView from "./pages/FamilySidebar";
-import Profile from "./components/Profile";
+import Profile from "./pages/Profile";
 
 function MainRoutes() {
   return (

@@ -1,4 +1,10 @@
-export const items = {
+import { FamilyTreeItem } from "../types";
+
+interface ItemObject {
+  [key: string]: FamilyTreeItem;
+}
+
+export const items: ItemObject = {
   root: {
     index: "root",
     isFolder: false,
@@ -281,6 +287,7 @@ export const items = {
     index: "nyagashayija",
     children: ["maclin", "afande", "bright", "mutoni", "shema"],
     data: "Nyagashayija",
+    isFolder: true,
     gender: "Male",
     born: "N/A",
     dead: "Present",
@@ -291,7 +298,7 @@ export const items = {
     children: ["deus", "natasha", "kevin"],
     data: "Edward",
     gender: "Male",
-
+    isFolder: true,
     born: "N/A",
     dead: "Present",
   },
@@ -710,6 +717,86 @@ export const items = {
   },
 
   //Abana ba Nyagashayija
+  maclin: {
+    index: "maclin",
+    children: [],
+    data: "Maclin",
+    isFolder: false,
+    gender: "Female",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  afande: {
+    index: "afande",
+    children: [],
+    data: "Afande",
+    isFolder: false,
+    gender: "Male",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  bright: {
+    index: "bright",
+    children: [],
+    data: "Bright",
+    isFolder: false,
+    gender: "Male",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  mutoni: {
+    index: "mutoni",
+    children: [],
+    data: "Mutoni",
+    isFolder: false,
+    gender: "Female",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  shema: {
+    index: "shema",
+    children: [],
+    data: "Shema",
+    isFolder: false,
+    gender: "Male",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  // Abana ba Edward Rwakojo
+  deus: {
+    index: "deus",
+    children: [],
+    data: "Deus",
+    isFolder: false,
+    gender: "Male",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  natasha: {
+    index: "natasha",
+    children: [],
+    data: "Natasha",
+    isFolder: false,
+    gender: "Female",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  kevin: {
+    index: "kevin",
+    children: [],
+    data: "Kevin",
+    isFolder: false,
+    gender: "Male",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
 };
-
 // Create an object with the same data as items but add photo property to each item

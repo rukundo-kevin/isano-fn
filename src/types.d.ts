@@ -20,10 +20,20 @@ interface RenderItem {
 interface FamilyMember {
   index: string;
   isFolder?: boolean;
-  dead?: boolean;
-  children?: never[];
+  dead?: string;
+  children: string[];
   data: string;
-  born: string;
+  born?: string;
   photo?: string;
-  gender: string;
+  gender?: string;
+}
+
+interface FamilyTreeNode {
+  name: string;
+  children?: FamilyTreeNode[];
+  attributes?: Record<string, any>;
+}
+
+interface FamilyTreeItem extends FamilyMember {
+  attributes?: Record<string, string>;
 }

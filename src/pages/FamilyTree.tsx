@@ -6,11 +6,18 @@ import dropletImg from "../images/kevin.jpg";
 import { FaAngleDoubleDown, FaAngleDoubleRight } from "react-icons/fa";
 import Modal from "../components/Modal";
 import { useCenteredTree } from "../Hooks/useCenteredTree";
+import { FamilyTreeItem, FamilyTreeNode } from "../types";
+import { items } from "../constants/family-folderview";
+import { createFamilyTree } from "../helpers/createFamilyTree";
 
 interface ForeignObject {
   width: number;
   height: number;
 }
+
+const itemsArray: FamilyTreeItem[] = Object.values(items);
+
+const familyTree: FamilyTreeNode = createFamilyTree(itemsArray, "root");
 
 const renderForeignObjectNode = (
   customNodeProps: CustomNodeElementProps,
@@ -69,7 +76,7 @@ export default function FamilyTree() {
   return (
     <div id="treeWrapper" className="h-screen w-screen" ref={containerRef}>
       <Tree
-        data={family}
+        data={familyTree}
         pathFunc="step"
         orientation="vertical"
         translate={translate}
