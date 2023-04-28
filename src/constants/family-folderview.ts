@@ -62,7 +62,8 @@ export const items: ItemObject = {
     data: "Rwabununga Charles",
     born: "Jan  1928",
     dead: "Oct 2015",
-    photo: "",
+    photo:
+      "https://res.cloudinary.com/dpymyyo7h/image/upload/v1682683508/rwabununga_ac8vdy.jpg",
   },
   gafurutsi: {
     index: "gafurutsi",
@@ -185,7 +186,8 @@ export const items: ItemObject = {
     data: "Kagubare Alex",
     born: "Jan 1962",
     dead: "Feb 14, 2023",
-    photo: "",
+    photo:
+      "https://res.cloudinary.com/dpymyyo7h/image/upload/v1682683502/kagubare_uxqrlk.jpg",
   },
   kabanguka: {
     index: "kabanguka",
@@ -648,9 +650,10 @@ export const items: ItemObject = {
     data: "Kagubare Samuel",
     isFolder: false,
     gender: "Male",
-
     born: "N/A",
     dead: "Present",
+    photo:
+      "https://res.cloudinary.com/dpymyyo7h/image/upload/v1682684240/kagubare-sam_qllv0x.jpg",
   },
   dorcas: {
     index: "dorcas",

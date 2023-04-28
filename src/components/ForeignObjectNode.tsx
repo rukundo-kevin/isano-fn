@@ -35,9 +35,6 @@ export default function renderForeignObjectNode(
           height={40}
           width={50}
           x={-25}
-          onClick={() => {
-            nodeDatum.attributes && handleNodeClick(nodeDatum);
-          }}
         >
           <g>
             <g>
@@ -66,9 +63,6 @@ export default function renderForeignObjectNode(
           height={40}
           width={50}
           x={-25}
-          onClick={() => {
-            nodeDatum.attributes && handleNodeClick(nodeDatum);
-          }}
         >
           <path
             fill="#141f38"
