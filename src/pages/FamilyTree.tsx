@@ -7,7 +7,13 @@ import { items } from "../constants/family-folderview";
 import { createFamilyTree } from "../helpers/createFamilyTree";
 import renderForeignObjectNode from "../components/ForeignObjectNode";
 import { FaUser } from "react-icons/fa";
-import { TreeNodeDatum } from "react-d3-tree/lib/types/types/common";
+import {
+  Orientation,
+  TreeLinkDatum,
+  TreeNodeDatum,
+} from "react-d3-tree/lib/types/types/common";
+import { LinkProps } from "react-router-dom";
+import { TreeLinkEventCallback } from "react-d3-tree/lib/types/Tree/types";
 
 const itemsArray: FamilyTreeItem[] = Object.values(items).map((item) => ({
   data: item.data,
@@ -117,11 +123,27 @@ export default function FamilyTree() {
     setShowModal(true);
   };
 
+  const handleLinkMouseOver: TreeLinkEventCallback = (
+    source,
+    target,
+    event
+  ) => {
+    console.log(source);
+  };
+
+  const drawStepPath = (linkData: TreeLinkDatum, orientation: Orientation) => {
+    const { source, target } = linkData;
+    const deltaY = target.y - source.y;
+    return `M${source.x},${source.y} V${source.y + deltaY / 2} H${target.x} V${
+      target.y
+    }`;
+  };
+
   return (
     <div id="treeWrapper" className="h-screen w-screen" ref={containerRef}>
       <Tree
         data={familyTree}
-        pathFunc="step"
+        pathFunc={drawStepPath}
         orientation="vertical"
         translate={translate}
         dimensions={dimensions}
@@ -129,7 +151,7 @@ export default function FamilyTree() {
         zoom={0.7}
         nodeSize={nodeSize}
         initialDepth={1}
-        separation={{ siblings: 1.3, nonSiblings: 2 }}
+        separation={{ siblings: 1.4, nonSiblings: 2 }}
         renderCustomNodeElement={(rd3tProps) =>
           renderForeignObjectNode(
             rd3tProps,
@@ -137,6 +159,7 @@ export default function FamilyTree() {
             handleNodeClick
           )
         }
+        onLinkClick={handleLinkMouseOver}
       />
       <FamilyMemberModal
         member={memberData}

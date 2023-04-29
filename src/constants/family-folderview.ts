@@ -111,7 +111,6 @@ export const items: ItemObject = {
     isFolder: false,
     gender: "Male",
     children: [],
-
     born: "N/A",
     dead: "N/A",
     photo: "",
@@ -122,7 +121,6 @@ export const items: ItemObject = {
     isFolder: false,
     gender: "Female",
     children: [],
-
     born: "N/A",
     dead: "N/A",
     photo: "",
@@ -133,7 +131,6 @@ export const items: ItemObject = {
     data: "Ancila",
     isFolder: false,
     gender: "Female",
-
     born: "N/A",
     dead: "N/A",
     photo: "",
@@ -144,7 +141,6 @@ export const items: ItemObject = {
     data: "Janet",
     isFolder: false,
     gender: "Female",
-
     born: "N/A",
     dead: " Present",
     photo: "",
@@ -154,7 +150,6 @@ export const items: ItemObject = {
     index: "mukankusi",
     isFolder: true,
     gender: "Female",
-
     children: [
       "mugoregore",
       "slyvia",
@@ -173,7 +168,6 @@ export const items: ItemObject = {
     index: "kagubare",
     isFolder: true,
     gender: "Male",
-
     children: [
       "mushabe",
       "kamukobwa",
@@ -193,7 +187,6 @@ export const items: ItemObject = {
     index: "kabanguka",
     isFolder: true,
     gender: "Male",
-
     children: [
       "kaliza",
       "rukundoKevin",
@@ -208,7 +201,6 @@ export const items: ItemObject = {
   },
   kabalungi: {
     index: "kabalungi",
-
     isFolder: true,
     gender: "Female",
     children: ["rutare", "samKabarungi", "nkotanyi", "umuhozaAnitha"],
@@ -221,7 +213,6 @@ export const items: ItemObject = {
     index: "karimukiza",
     isFolder: true,
     gender: "Male",
-
     children: ["kagubareSam", "dorcas", "phionah", "kezaIris"],
     data: "Karimukiza Samuel",
     born: "N/A",
@@ -243,7 +234,6 @@ export const items: ItemObject = {
     index: "kayitesi",
     isFolder: true,
     gender: "female",
-
     children: ["danny", "deborah"],
     data: "Kayitesi",
     born: "N/A",
@@ -252,11 +242,10 @@ export const items: ItemObject = {
   },
   kabatesi: {
     index: "kabatesi",
-    children: [],
+    children: ["beulla"],
     data: "Kabatesi",
-    isFolder: false,
+    isFolder: true,
     gender: "Female",
-
     born: "N/A",
     dead: "Present",
     photo: "",
@@ -286,7 +275,17 @@ export const items: ItemObject = {
   },
   nyagashayija: {
     index: "nyagashayija",
-    children: ["maclin", "afande", "bright", "mutoni", "shema"],
+    children: [
+      "maclin",
+      "afande",
+      "brenda",
+      "bright",
+      "poda",
+      "mutoni",
+      "captain",
+      "rita",
+      "shema",
+    ],
     data: "Nyagashayija",
     isFolder: true,
     gender: "Male",
@@ -296,7 +295,7 @@ export const items: ItemObject = {
   },
   edward: {
     index: "edward",
-    children: ["deus", "natasha", "kevin"],
+    children: ["deus", "natasha", "kevin", "ivan", "keza"],
     data: "Edward",
     gender: "Male",
     isFolder: true,
@@ -529,7 +528,6 @@ export const items: ItemObject = {
     born: "N/A",
     dead: "Present",
   },
-
   rwakibwana: {
     index: "rwakibwana",
     children: [],
@@ -642,7 +640,6 @@ export const items: ItemObject = {
     born: "N/A",
     dead: "Present",
   },
-
   // Abana ba kabao
   kagubareSam: {
     index: "kagubareSam",
@@ -685,7 +682,6 @@ export const items: ItemObject = {
     born: "N/A",
     dead: "Present",
   },
-
   //Abana ba Kayitesi
   danny: {
     index: "danny",
@@ -701,6 +697,16 @@ export const items: ItemObject = {
     index: "deborah",
     children: [],
     data: "Deborah",
+    isFolder: false,
+    gender: "Female",
+    born: "N/A",
+    dead: "Present",
+  },
+  //Abana ba Kabatesi
+  beulla: {
+    index: "beulla",
+    children: [],
+    data: "Beulla",
     isFolder: false,
     gender: "Female",
     born: "N/A",
@@ -722,7 +728,7 @@ export const items: ItemObject = {
   maclin: {
     index: "maclin",
     children: [],
-    data: "Maclin",
+    data: "Kirabo Maclin",
     isFolder: false,
     gender: "Female",
     born: "N/A",
@@ -739,6 +745,16 @@ export const items: ItemObject = {
     dead: "Present",
     photo: "",
   },
+  brenda: {
+    index: "brenda",
+    children: [],
+    data: "Brenda",
+    isFolder: false,
+    gender: "Female",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
   bright: {
     index: "bright",
     children: [],
@@ -749,10 +765,40 @@ export const items: ItemObject = {
     dead: "Present",
     photo: "",
   },
+  poda: {
+    index: "poda",
+    children: [],
+    data: "Poda",
+    isFolder: false,
+    gender: "Female",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
   mutoni: {
     index: "mutoni",
     children: [],
     data: "Mutoni",
+    isFolder: false,
+    gender: "Female",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  captain: {
+    index: "captain",
+    children: [],
+    data: "Blaise",
+    isFolder: false,
+    gender: "Male",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  rita: {
+    index: "rita",
+    children: [],
+    data: "Rita",
     isFolder: false,
     gender: "Female",
     born: "N/A",
@@ -796,6 +842,26 @@ export const items: ItemObject = {
     data: "Kevin",
     isFolder: false,
     gender: "Male",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  ivan: {
+    index: "ivan",
+    children: [],
+    data: "Ivan",
+    isFolder: false,
+    gender: "Male",
+    born: "N/A",
+    dead: "Present",
+    photo: "",
+  },
+  keza: {
+    index: "Keza",
+    children: [],
+    data: "Keza",
+    isFolder: false,
+    gender: "Female",
     born: "N/A",
     dead: "Present",
     photo: "",
