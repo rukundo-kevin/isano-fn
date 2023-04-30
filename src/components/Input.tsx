@@ -1,10 +1,4 @@
-type DefaultProps = {
-  customClass?: string;
-};
-
-const InputDefaultProps = {
-  customClass: "",
-} as DefaultProps;
+import { DefaultProps, customClassDefaultProps } from "../types";
 
 type Input = {
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -17,6 +11,7 @@ type Input = {
   placeholder: string;
   register: any;
   errors: any;
+
 };
 
 function Input({
@@ -30,7 +25,7 @@ function Input({
   customClass,
   isRequired,
   register,
-}: Input & DefaultProps) {
+}: Input & DefaultProps): JSX.Element {
   /* Format error message to remove the tick and capitilize the first letter */
   let fieldName = name.replace(/-/gi, " ");
   fieldName = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
@@ -62,6 +57,6 @@ function Input({
   );
 }
 
-Input.defaultProps = InputDefaultProps;
+Input.defaultProps = customClassDefaultProps;
 
 export default Input;

@@ -44,3 +44,11 @@ interface Attributes {
 interface FamilyTreeItem extends FamilyMember {
   attributes?: Attributes;
 }
+
+type DefaultProps = {
+  customClass?: string;
+};
+
+const customClassDefaultProps = {
+  customClass: "",
+} as DefaultProps;
