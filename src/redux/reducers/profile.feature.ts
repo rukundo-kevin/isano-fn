@@ -1,7 +1,12 @@
-// @ts-nocheck
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface InitialState {
+  isLoading: boolean;
+  error: object | null;
+  message: string;
+  profile: object | null;
+}
+const initialState: InitialState = {
   isLoading: false,
   error: null,
   message: "",
@@ -14,13 +19,13 @@ export const profileSlicer = createSlice({
   reducers: {
     profilePending: (state) => {
       state.isLoading = true;
-      state.error = "";
+      state.error = null;
       state.message = "";
     },
     profileSuccess: (state, payload) => {
       state.isLoading = false;
-      state.error = "";
-      state.message = payload;
+      state.error = null;
+      state.message = payload.payload;
     },
     profileFail: (state, payload) => {
       state.isLoading = false;

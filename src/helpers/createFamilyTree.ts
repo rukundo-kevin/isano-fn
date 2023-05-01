@@ -1,4 +1,8 @@
 import { FamilyTreeItem, FamilyTreeNode } from "../types";
+/**
+ * @description creates a family tree from flat array
+ *
+ */
 
 export function createFamilyTree(
   items: FamilyTreeItem[],
@@ -6,7 +10,7 @@ export function createFamilyTree(
 ): FamilyTreeNode {
   const currentItem = items.find((item) => item.index === index);
   if (!currentItem) {
-    throw new Error(`Item ${index} not found`);
+    throw new Error(`Family Member ${index} not found`);
   }
 
   const familyTreeNode: FamilyTreeNode = {

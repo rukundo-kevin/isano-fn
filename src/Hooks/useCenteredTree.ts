@@ -4,8 +4,15 @@ interface ContainerElement extends HTMLElement {
   getBoundingClientRect(): DOMRect;
 }
 
-type Translate = { x: number; y: number };
-type Dimensions = { width: number; height: number };
+interface Translate {
+  x: number;
+  y: number;
+}
+
+interface Dimensions {
+  width: number;
+  height: number;
+}
 
 type UseCenteredTreeReturnType = [
   Dimensions | undefined,
