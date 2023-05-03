@@ -24,15 +24,12 @@ export default function renderForeignObjectNode(
             }   `}
           >
             {nodeDatum.attributes?.photo ? (
-              <image
-                href={nodeDatum.attributes.photo.toString()}
-                height="60"
-                width="60"
-                x="-30"
+              <img
+                src={nodeDatum.attributes.photo.toString()}
                 onClick={() => {
                   nodeDatum.attributes && handleNodeClick(nodeDatum);
                 }}
-                className="border-2 outline-red-500"
+                className="border-2 h-16 w-16 outline-red-500"
               />
             ) : nodeDatum.attributes?.gender !== "Female" ? (
               <svg
@@ -92,6 +89,7 @@ export default function renderForeignObjectNode(
               onClick={() => {
                 nodeDatum.attributes && handleNodeClick(nodeDatum);
               }}
+              className={`${!nodeDatum.children && "mb-2"}`}
             >
               {nodeDatum.name}
             </h3>

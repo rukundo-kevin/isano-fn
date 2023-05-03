@@ -20,24 +20,24 @@ const Login = () => {
   const [loginState, setLoginState] = useState(fieldState);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { error, isAuth } = useSelector((state) => state.login);
+  // const { error, isAuth } = useSelector((state) => state.login);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (isAuth) return navigate("../dashboard");
-    }, 300);
-  }, [isAuth]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if (isAuth) return navigate("../dashboard");
+  //   }, 300);
+  // }, [isAuth]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { email, password } = loginState;
-    return dispatch(login({ email, password }));
+    // return dispatch(login({ email, password }));
   };
 
   return (
     <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
       <div className="">
-        {error && (
+        {/* {error && (
           <Alert message={error.payload} heading="Error" variant="error" />
         )}
         {isAuth && (
@@ -46,15 +46,15 @@ const Login = () => {
             heading="Success"
             variant="success"
           />
-        )}
-        {loginFields.map((field) => (
+        )} */}
+        {/* {loginFields.map((field) => (
           <Input
             key={field.id}
             labelText={field.labelText}
             labelFor={field.labelFor}
             id={field.id}
-            register={register}
-            errors={errors}
+            // register={register}
+            // errors={errors}
             name={field.name}
             type={field.type}
             isRequired={field.isRequired}
@@ -64,7 +64,7 @@ const Login = () => {
               setLoginState({ ...loginState, [e.target.id]: e.target.value });
             }}
           />
-        ))}
+        ))} */}
       </div>
       <div className="flex items-center justify-between ">
         <div className="text-sm">

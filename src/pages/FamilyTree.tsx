@@ -13,7 +13,6 @@ import {
   TreeLinkDatum,
   TreeNodeDatum,
 } from "react-d3-tree/lib/types/types/common";
-import { LinkProps } from "react-router-dom";
 import { TreeLinkEventCallback } from "react-d3-tree/lib/types/Tree/types";
 
 const itemsArray: FamilyTreeItem[] = Object.values(items).map((item) => ({
@@ -45,7 +44,6 @@ const FamilyMemberModal = (memberData: ModalTreeNode) => {
 
   return (
     <>
-      {" "}
       <Modal visible={showModal} onClose={() => setShowModal(false)}>
         <div className="flex w-full md:w-[60%] items-center justify-center m-4">
           <div className="w-full rounded-xl p-12 shadow-2xl md:w-8/12 lg:w-10/12 bg-white">
@@ -145,7 +143,7 @@ export default function FamilyTree() {
 
   const [dimensions, translate, containerRef] = useCenteredTree();
 
-  const nodeSize = { x: 140, y: 150 };
+  const nodeSize = { x: 160, y: 150 };
 
   const foreignObjectProps = { width: nodeSize.x, height: nodeSize.y, x: 20 };
   const handleNodeClick = (memberData: TreeNodeDatum) => {
