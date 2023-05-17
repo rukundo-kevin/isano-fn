@@ -168,7 +168,11 @@ export default function FamilyTree() {
   };
 
   return (
-    <div id="treeWrapper" className="h-screen w-screen" ref={containerRef}>
+    <div
+      id="treeWrapper"
+      className="h-screen w-screen bg-[#eee]"
+      ref={containerRef}
+    >
       <Tree
         data={familyTree}
         pathFunc={drawStepPath}
@@ -179,6 +183,7 @@ export default function FamilyTree() {
         zoom={0.7}
         nodeSize={nodeSize}
         initialDepth={1}
+        depthFactor={250}
         separation={{ siblings: 1.4, nonSiblings: 2 }}
         renderCustomNodeElement={(rd3tProps) =>
           renderForeignObjectNode(

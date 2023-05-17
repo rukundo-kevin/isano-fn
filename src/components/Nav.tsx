@@ -18,7 +18,7 @@ const Nav = () => {
 
   return (
     <div className="w-full fixed top-0 left-0 z-50">
-      <div className="md:flex items-center justify-center z-50 bg-[#eee] dark:bg-slate-900 py-4 md:px-10 px-7 shadow-sm border-b-2">
+      <div className="md:flex items-center justify-center z-50 bg-white dark:bg-slate-900 py-4 md:px-10 px-7 shadow-sm border-b-2">
         <div
           className="font-bold text-xl cursor-pointer flex items-center font-[Poppins] text-gray-900 md:text-white
       dark:text-white p-2 md:dark:border  rounded-full ml-4 md:ml-0 md:mr-20"
@@ -39,7 +39,7 @@ const Nav = () => {
         </div>
 
         <ul
-          className={` md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-[#eee] dark:bg-slate-900 md:z-40 z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-transform  duration-500 ease-in ${
+          className={` md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white dark:bg-slate-900 md:z-40 z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-transform  duration-500 ease-in ${
             open ? "top-[72px] " : "top-[-490px]"
           }`}
         >
