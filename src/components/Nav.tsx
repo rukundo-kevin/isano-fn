@@ -10,7 +10,7 @@ const Nav = () => {
   let Links = [
     {
       name: "Family Tree",
-      link: "/",
+      link: "/familytree",
     },
     { name: "View Family", link: "/family" },
   ];

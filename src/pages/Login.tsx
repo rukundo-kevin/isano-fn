@@ -7,6 +7,8 @@ import { loginFields } from "../constants/formFields";
 import Input from "../components/Input";
 import Alert from "../components/Alert";
 
+import dropletImg from "../images/droplet.png";
+
 type fields = {
   [key: string]: string | number;
 };
@@ -35,54 +37,65 @@ const Login = () => {
   };
 
   return (
-    <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-      <div className="">
-        {/* {error && (
-          <Alert message={error.payload} heading="Error" variant="error" />
-        )}
-        {isAuth && (
-          <Alert
-            message="Login successful"
-            heading="Success"
-            variant="success"
-          />
-        )} */}
-        {/* {loginFields.map((field) => (
-          <Input
-            key={field.id}
-            labelText={field.labelText}
-            labelFor={field.labelFor}
-            id={field.id}
-            // register={register}
-            // errors={errors}
-            name={field.name}
-            type={field.type}
-            isRequired={field.isRequired}
-            placeholder={t(`${field.placeholder}`)}
-            customClass="dark:bg-dark-bg"
-            handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setLoginState({ ...loginState, [e.target.id]: e.target.value });
-            }}
-          />
-        ))} */}
-      </div>
-      <div className="flex items-center justify-between ">
-        <div className="text-sm">
-          <a
-            href="/password/reset"
-            className="font-medium text-yellow-600 hover:text-yellow-500"
-          >
-            Forgot your password?
-          </a>
+    <div className="min-h-full  h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col justify-center items-center ">
+        <div className="mx-auto border flex h-[80px] w-[80px] items-center justify-center rounded-full p-1 shadow-sm">
+          <img src={dropletImg} alt="" className="w-10 h-14  " />
+        </div>
+        <div className="flex items-center justify-between mb-4 mt-2d">
+          <div className="text-sm">
+            <span className="font-medium"> Don't have an account? </span>
+            <a
+              href="/password/reset"
+              className="font-medium text-primary ml-2 hover:text-yellow-500"
+            >
+              Sign up
+            </a>
+          </div>
         </div>
       </div>
-      <button
-        type="submit"
-        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 mt-10"
-      >
-        Login
-      </button>
-    </form>
+      <div className="bg-white max-w-md w-full space-y-4 border p-3 rounded shadow-sm">
+        <form className=" space-y-6" onSubmit={handleSubmit}>
+          <div className="">
+            {loginFields.map((field) => (
+              <Input
+                key={field.id}
+                labelText={field.labelText}
+                labelFor={field.labelFor}
+                id={field.id}
+                name={field.name}
+                type={field.type}
+                isRequired={field.isRequired}
+                placeholder={field.placeholder}
+                customClass="dark:bg-dark-bg"
+                handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setLoginState({
+                    ...loginState,
+                    [e.target.id]: e.target.value,
+                  });
+                }}
+              />
+            ))}
+          </div>
+          <div className="flex items-center justify-between ">
+            <div className="text-sm">
+              <a
+                href="/password/reset"
+                className="font-medium text-primary hover:text-yellow-500"
+              >
+                Forgot your password?
+              </a>
+            </div>
+          </div>
+          <button
+            type="submit"
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 "
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 

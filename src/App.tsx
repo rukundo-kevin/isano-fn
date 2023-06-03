@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import MainRoutes from "./Routes";
+import MainRoutes from "./routes/Routes";
+import DashboardRoutes from "./routes/DashboardRoutes";
 
 function App() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
     <>
       <Router>
         <Routes>
+          <Route path="/dashboard/*" element={<DashboardRoutes />} />
           <Route path="/*" element={<MainRoutes />} />
         </Routes>
       </Router>
