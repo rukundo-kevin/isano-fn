@@ -203,7 +203,12 @@ export const items: ItemObject = {
     index: "kabalungi",
     isFolder: true,
     gender: "Female",
-    children: ["rutare", "samKabarungi", "nkotanyi", "umuhozaAnitha"],
+    children: [
+      "rutarekaJoshua",
+      "samKabarungi",
+      "rugiganaPatrick",
+      "umuhozaAnitha",
+    ],
     data: "Kabalungi",
     born: "N/A",
     dead: "Present",
@@ -600,10 +605,10 @@ export const items: ItemObject = {
     dead: "Present",
   },
   // Abana ba Kabalungi
-  rutare: {
-    index: "rutare",
+  rutarekaJoshua: {
+    index: "rutarekaJoshua",
     children: [],
-    data: "Rutare",
+    data: "Rutareka Josuah",
     isFolder: false,
     gender: "Male",
 
@@ -613,20 +618,19 @@ export const items: ItemObject = {
   samKabarungi: {
     index: "samKabarungi",
     children: [],
-    data: "Sam ",
+    data: "Rugira Samuel ",
     isFolder: false,
     gender: "Male",
 
     born: "N/A",
     dead: "Present",
   },
-  nkotanyi: {
-    index: "nkotanyi",
+  rugiganaPatrick: {
+    index: "rugiganaPatrick",
     children: [],
-    data: "Nkotanyi",
+    data: "Rugigana Patrick",
     isFolder: false,
     gender: "Male",
-
     born: "N/A",
     dead: "Present",
   },

@@ -19,7 +19,7 @@ function Sidebar({ style, toggle }: { style: string; toggle: () => void }) {
   useEffect(() => {}, [togglei]);
   return (
     <div
-      className={`${style} flex-col fixed h-[100%] pt-[3vh] lg:pt-[11vh] bg-gray-800 dark:bg-dark-bg border-r p-2`}
+      className={`${style} flex-col  fixed h-[100%] pt-[3vh] lg:pt-[11vh] bg-gray-800 dark:bg-dark-bg border-r p-2`}
     >
       <div className="list-none pr-8">
         <SideNavLink onClick={toggle} name="Dashboard" to="/dashboard/">

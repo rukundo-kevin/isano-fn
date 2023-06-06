@@ -17,23 +17,20 @@ export default function SideNavLink({
   ...props
 }: Props) {
   return (
-    <li
-      className="mb-4  text-white hover:text-primary transition-all group-hover:transition-all"
+    <NavLink
+      onClick={onClick}
+      to={to}
+      className={(navData) => {
+        return `mb-4 ${
+          navData.isActive
+            ? "bg-white text-primary"
+            : "text-white hover:text-primary"
+        }  px-2 py-1 flex text-primary hover:text-primary transition-all group-hover:transition-all`;
+      }}
       {...props}
     >
-      <NavLink
-        onClick={onClick}
-        to={to}
-        className={(navData) => {
-          if (navData.isActive) {
-            return "flex flex-row font-bold text-primary dark:text-primary";
-          }
-          return "flex flex-row dark:text-dark-text-fill";
-        }}
-      >
-        {children}
-        <span className="text-base ">{name}</span>
-      </NavLink>
-    </li>
+      <span className="mt-1"> {children}</span>
+      <span className="text-base ">{name}</span>
+    </NavLink>
   );
 }
