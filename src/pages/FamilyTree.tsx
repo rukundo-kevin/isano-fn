@@ -176,7 +176,7 @@ export default function FamilyTree() {
       <Tree
         data={familyTree}
         pathFunc={drawStepPath}
-        orientation="horizontal"
+        orientation="vertical"
         translate={translate}
         dimensions={dimensions}
         centeringTransitionDuration={1000}
