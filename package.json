@@ -1,16 +1,13 @@
 {
-  "name": "portfolio",
+  "name": "isano-fn",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.11",
+    "@types/node": "^18.0.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^4.2.1",
     "d3": "^7.8.4",
     "install": "^0.13.0",
     "npm": "^9.6.4",
@@ -22,22 +19,15 @@
     "react-redux": "^8.0.5",
     "react-router": "^6.6.1",
     "react-router-dom": "^6.6.1",
-    "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "typescript": "^4.9.4",
+    "vite": "^5.2.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
   },
   "browserslist": {
     "production": [
@@ -53,6 +43,8 @@
   },
   "devDependencies": {
     "@redux-devtools/core": "^3.13.1",
-    "tailwindcss": "^3.2.4"
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
   }
 }
