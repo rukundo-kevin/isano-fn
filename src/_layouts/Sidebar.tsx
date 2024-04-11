@@ -3,15 +3,14 @@ import { NavLink } from "react-router-dom";
 import {
   HiChartPie,
   HiCog,
-  HiCalendar,
   HiFolder,
   HiBell,
 } from "react-icons/hi2";
-import Tooltip from "./Tooltip";
+import Tooltip from "../components/Tooltip";
 import { FaSignOutAlt, FaPhone } from "react-icons/fa";
 // import { UserContext } from "../hook/useAuth";
 import CheckRole from "../helpers/CheckRoles";
-import SideNavLink from "./SideNavLink";
+import SideNavLink from "../components/SideNavLink";
 
 function Sidebar({ style, toggle }: { style: string; toggle: () => void }) {
   // const { logout } = useContext(UserContext);

@@ -10,6 +10,7 @@ import { HiBars3CenterLeft, HiXMark } from "react-icons/hi2";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { RenderItem } from "../types";
 import Profile from "./Profile";
+import Nav from "../_layouts/Nav";
 
 const renderItem = ({
   title,
@@ -53,6 +54,8 @@ function FamilySidebar() {
   const handleSelect = (memberIndex: TreeItemIndex[]) => {};
 
   return (
+    <>
+    <Nav/>
     <div className="flex overflow-hidden  ">
       <div
         onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -86,6 +89,7 @@ function FamilySidebar() {
       </div>
       {pathname === "/family" ? <Profile /> : <Outlet />}
     </div>
+    </>
   );
 }
 

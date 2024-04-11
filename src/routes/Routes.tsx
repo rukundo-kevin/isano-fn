@@ -1,10 +1,10 @@
 /* eslint-disable */
-import React, { Suspense } from "react";
+import  { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Error from "../components/Error";
 import Home from "../pages/Homepage";
 
-import Nav from "../components/Nav";
+import Nav from "../_layouts/Nav";
 import Skeleton from "../components/Skeleton";
 import TreeView from "../pages/FamilySidebar";
 import Profile from "../pages/Profile";

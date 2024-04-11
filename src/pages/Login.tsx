@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, {  useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { loginFields } from "../constants/formFields";
 // import { login } from "../../redux/actions/auth.action";
 import Input from "../components/Input";
-import Alert from "../components/Alert";
 
-import dropletImg from "../images/droplet.png";
+import dropletImg from "../assets/droplet.png";
 
 type fields = {
   [key: string]: string | number;
@@ -32,12 +31,12 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { email, password } = loginState;
+    // const { email, password } = loginState;
     // return dispatch(login({ email, password }));
   };
 
   return (
-    <div className="min-h-full  h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-full bg-[#eee]  h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col justify-center items-center ">
         <div className="mx-auto border flex h-[80px] w-[80px] items-center justify-center rounded-full p-1 shadow-sm">
           <img src={dropletImg} alt="" className="w-10 h-14  " />

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { HiArrowRight } from "react-icons/hi2";
 
-import dropletImg from "../images/droplet.png";
+import dropletImg from "../assets/droplet.png";
 
 const Nav = () => {
   let Links = [

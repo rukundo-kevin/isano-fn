@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../_layouts/Sidebar";
 
 const handleToggle = () => {};
 const Dashboard = () => {

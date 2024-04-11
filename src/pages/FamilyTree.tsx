@@ -1,19 +1,18 @@
 import { useState } from "react";
-import Tree from "react-d3-tree";
+import Tree, {
+  Orientation,
+  TreeLinkDatum,
+  TreeLinkEventCallback,
+  TreeNodeDatum,
+} from "react-d3-tree";
 import Modal, { PhotoModal } from "../components/Modal";
-import { useCenteredTree } from "../Hooks/useCenteredTree";
+import { useCenteredTree } from "../hooks/useCenteredTree";
 import { Attributes, FamilyTreeItem, FamilyTreeNode } from "../types";
 import { items } from "../constants/family-folderview";
 import { createFamilyTree } from "../helpers/createFamilyTree";
 import renderForeignObjectNode from "../components/ForeignObjectNode";
 import { FaPencilAlt, FaUser } from "react-icons/fa";
-
-import {
-  Orientation,
-  TreeLinkDatum,
-  TreeNodeDatum,
-} from "react-d3-tree/lib/types/types/common";
-import { TreeLinkEventCallback } from "react-d3-tree/lib/types/Tree/types";
+import Nav from "../_layouts/Nav";
 
 const itemsArray: FamilyTreeItem[] = Object.values(items).map((item) => ({
   data: item.data,
@@ -168,37 +167,40 @@ export default function FamilyTree() {
   };
 
   return (
-    <div
-      id="treeWrapper"
-      className="h-screen w-screen bg-[#eee]"
-      ref={containerRef}
-    >
-      <Tree
-        data={familyTree}
-        pathFunc={drawStepPath}
-        orientation="vertical"
-        translate={translate}
-        dimensions={dimensions}
-        centeringTransitionDuration={1000}
-        zoom={0.7}
-        nodeSize={nodeSize}
-        initialDepth={1}
-        depthFactor={250}
-        separation={{ siblings: 1.4, nonSiblings: 2 }}
-        renderCustomNodeElement={(rd3tProps) =>
-          renderForeignObjectNode(
-            rd3tProps,
-            foreignObjectProps,
-            handleNodeClick
-          )
-        }
-        onLinkClick={handleLinkMouseOver}
-      />
-      <FamilyMemberModal
-        member={memberData}
-        showModal={showModal}
-        setShowModal={setShowModal}
-      />
-    </div>
+    <>
+      <Nav />
+      <div
+        id="treeWrapper"
+        className="h-screen w-screen bg-[#eee]"
+        ref={containerRef}
+      >
+        <Tree
+          data={familyTree}
+          pathFunc={drawStepPath}
+          orientation="vertical"
+          translate={translate}
+          dimensions={dimensions}
+          centeringTransitionDuration={1000}
+          zoom={0.7}
+          nodeSize={nodeSize}
+          initialDepth={1}
+          depthFactor={250}
+          separation={{ siblings: 1.4, nonSiblings: 2 }}
+          renderCustomNodeElement={(rd3tProps) =>
+            renderForeignObjectNode(
+              rd3tProps,
+              foreignObjectProps,
+              handleNodeClick
+            )
+          }
+          onLinkClick={handleLinkMouseOver}
+        />
+        <FamilyMemberModal
+          member={memberData}
+          showModal={showModal}
+          setShowModal={setShowModal}
+        />
+      </div>
+    </>
   );
 }
